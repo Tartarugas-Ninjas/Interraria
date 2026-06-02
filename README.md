@@ -27,3 +27,16 @@ Um dos elementos mais importantes do Slam é a valorização da oralidade. Difer
 O futuro do Slam no Brasil
 
 O crescimento do movimento Slam no Brasil demonstra sua relevância cultural e social. A cada ano surgem novos coletivos, campeonatos e projetos educacionais inspirados nessa prática. Além de fortalecer a literatura periférica, o movimento amplia o acesso à cultura e cria oportunidades para que novos artistas sejam reconhecidos. O Slam também contribui para debates sobre temas importantes da sociedade contemporânea, tornando-se um espaço de reflexão e participação democrática. Seu desenvolvimento mostra que a arte pode ser uma poderosa ferramenta de transformação social, capaz de promover mudanças tanto individuais quanto coletivas.
+
+Referências:
+https://quindim.com.br/blog/slam-batalhas-de-poesia/
+[1] https://www.instagram.com
+[2] https://ppgletras.furg.br
+[3] https://intranet.cbt.ifsp.edu.br
+[4] https://lunetas.com.br
+[5] https://expressoperiferico.org
+[6] https://ponte.org
+[7] https://www.nexojornal.com.br
+[8] https://amandacruz03cel.medium.com
+[9] https://www.scielo.br
+https://profseducacao.com.br/artigos/o-que-e-slam-poesia-educacao-e-protesto/.
