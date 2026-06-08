@@ -29,3 +29,7 @@ Os memes são uma das formas mais visíveis da cultura digital contemporânea. M
 # Tecnologia como forma de expressão
 
 A tecnologia ampliou significativamente as possibilidades de expressão individual e coletiva. Por meio de celulares, aplicativos de edição, câmeras e redes sociais, os jovens conseguem produzir conteúdos que antes dependiam de equipamentos profissionais ou de grandes empresas de comunicação.
+
+# Conclusão
+
+A cultura digital tem transformado profundamente a vida dos jovens em Camaçari, criando novas formas de comunicação, expressão cultural e participação social. As redes sociais possibilitam a produção de conteúdo, o fortalecimento da identidade local e a geração de oportunidades econômicas. Ao mesmo tempo, é importante promover o uso consciente da tecnologia para que seus benefícios sejam aproveitados de maneira ética, criativa e inclusiva.
