@@ -80,7 +80,7 @@ caseiros, salões de dança e escolas de música conectam-se a esta rede. Um est
 empreendedorismo cultural em Camaçari sugere que ainda há carências de políticas
 públicas estruturadas para sustentar a indústria criativa na cidade.
 
-#Conclusão
+# Conclusão
 
 A pesquisa demonstra que a cultura urbana em Camaçari vai muito além do entretenimento, funcionando como uma importante ferramenta de expressão social, construção de identidade e resistência cultural da juventude. O grafite, a música, o hip-hop, os slams e a cultura digital revelam como os jovens utilizam diferentes formas artísticas para representar suas vivências, denunciar desigualdades e fortalecer o sentimento de pertencimento à comunidade.
 
