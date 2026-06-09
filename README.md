@@ -1,4 +1,4 @@
-Introdução
+# Introdução
 
 Neste trabalho vamos apresentar diferentes formas de expressão cultural da juventude de Camaçari. Abordaremos como a música, a arte, a poesia e a internet influenciam a vida dos jovens e ajudam a construir sua identidade cultural.
 
