@@ -19,6 +19,4 @@ Espaços onde a arte acontece
 
 A arte de rua em Camaçari pode ser encontrada em muros de escolas públicas, praças, centros culturais e áreas urbanas movimentadas. Além disso, exposições como Arte nos Muros, realizadas no Boulevard Shopping Camaçari, ajudam a divulgar os trabalhos produzidos pelos artistas e estudantes da cidade. 
 
-Conclusão
 
-O grafite e a arte de rua em Camaçari representam importantes formas de expressão cultural e social. Por meio de murais e intervenções urbanas, artistas e jovens transformam espaços públicos em locais de arte, diálogo e valorização da identidade da comunidade.
