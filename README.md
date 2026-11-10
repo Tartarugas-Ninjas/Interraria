@@ -1,4 +1,4 @@
-# Interraria
+# Interarea
 
 O Slam como espaço de voz e pertencimento
 
