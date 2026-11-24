@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CamaFlow — Hip Hop, Slam e Batalhas em Camaçari - BA</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== TEMA: preto, amarelo-limão e verde-menta (inspirado na referência) ===== */
+:root{
+  --cf-black:#000; --cf-ink:#0c0c0c; --cf-line:#2a2a2a;
+  --cf-lime:#e8ff3a; --cf-mint:#7dffa3; --cf-white:#fff; --cf-muted:#a3a3a3;
+  --font-display:'Syne',sans-serif; --font-body:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--cf-black);color:var(--cf-white);overflow-x:hidden}
+h1,h2,h3,h4,.font-display{font-family:var(--font-display);text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+.hl{color:var(--cf-lime)}
+section{padding:90px 0}
+.sec-title{font-size:clamp(2rem,5vw,3.6rem);margin-bottom:1.5rem}
+
+/* Faixa do topo */
+.top-bar{background:var(--cf-lime);color:#000;font-weight:700;font-size:.85rem;padding:8px 0}
+.top-bar a{color:#000;text-decoration:underline}
+
+/* Navbar */
+.navbar-cf{background:rgba(0,0,0,.92);border-bottom:1px solid var(--cf-line)}
+.navbar-cf .nav-link{color:var(--cf-white);font-weight:600;font-size:.9rem;padding:.5rem .9rem}
+.navbar-cf .nav-link:hover,.navbar-cf .nav-link.active{color:var(--cf-lime)}
+.logo{font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:#fff;text-decoration:none}
+.logo span{color:var(--cf-lime)}
+
+/* Botões */
+.btn-lime{background:var(--cf-lime);color:#000;font-weight:800;border:2px solid var(--cf-lime);border-radius:0;padding:12px 26px}
+.btn-lime:hover{background:#000;color:var(--cf-lime);border-color:var(--cf-lime)}
+.btn-line{background:transparent;color:#fff;font-weight:700;border:2px solid #fff;border-radius:0;padding:12px 26px}
+.btn-line:hover{background:#fff;color:#000}
+
+/* Hero */
+.hero{padding:70px 0 80px;position:relative}
+.hero h1{font-size:clamp(2.6rem,8vw,6rem);margin-bottom:1.5rem}
+.hero-photo{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}
+.hero-main{height:340px}
+.hero-small{height:230px;border:6px solid var(--cf-black);outline:1px solid var(--cf-line)}
+.badge-spin{position:absolute;width:150px;height:150px;left:-30px;top:20px;animation:spin 18s linear infinite}
+.badge-spin text{fill:#fff;font-size:12.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Faixa rolante */
+.ticker{background:var(--cf-mint);color:#000;overflow:hidden;white-space:nowrap;padding:12px 0;font-weight:800;text-transform:uppercase}
+.ticker-track{display:inline-block;animation:run 28s linear infinite}
+.ticker-track span{margin:0 28px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* Cards */
+.cf-card{background:var(--cf-ink);border:1px solid var(--cf-line);height:100%;position:relative}
+.cf-card:hover{border-color:var(--cf-lime)}
+.cf-card img{width:100%;height:210px;object-fit:cover;display:block}
+.cf-card .body{padding:18px}
+.tag{display:inline-block;background:var(--cf-lime);color:#000;font-size:.75rem;font-weight:800;padding:3px 10px}
+.tag-alt{background:var(--cf-mint)}
+.fav{position:absolute;top:12px;right:12px;width:38px;height:38px;background:#000;border:1px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center}
+.fav.saved{background:var(--cf-lime);color:#000;border-color:var(--cf-lime)}
+
+/* Linha do tempo */
+.tl{border-left:3px solid var(--cf-lime);padding:0 0 28px 24px}
+.tl:last-child{padding-bottom:0}
+.tl h4{font-size:1.2rem;color:var(--cf-lime)}
+
+/* Filtros e chips */
+.filter-btn{background:transparent;border:1px solid var(--cf-line);color:#fff;font-weight:700;padding:8px 18px}
+.filter-btn.active,.filter-btn:hover{background:var(--cf-lime);color:#000;border-color:var(--cf-lime)}
+.chip{display:inline-block;background:transparent;border:1px solid var(--cf-mint);color:var(--cf-mint);padding:6px 14px;margin:0 6px 8px 0;font-weight:600;font-size:.9rem;cursor:pointer}
+.chip:hover{background:var(--cf-mint);color:#000}
+.tk-logo{font-family:var(--font-display);font-weight:800;font-size:1.1rem}
+.tk-logo em{font-style:normal;background:#000;color:var(--cf-lime);padding:0 6px;margin-left:2px}
+
+/* Apoie */
+.support{background:var(--cf-lime);color:#000;padding:50px 30px}
+.support h2{font-size:clamp(2rem,5vw,3.4rem)}
+.btn-dark-cf{background:#000;color:var(--cf-lime);font-weight:800;border-radius:0;padding:14px 30px;border:2px solid #000}
+.btn-dark-cf:hover{background:transparent;color:#000}
+
+footer{border-top:1px solid var(--cf-line);padding:40px 0;color:var(--cf-muted)}
+.modal-content{background:var(--cf-ink);border:1px solid var(--cf-lime);border-radius:0}
+:focus-visible{outline:3px solid var(--cf-mint);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.ticker-track,.badge-spin{animation:none}html{scroll-behavior:auto}}
+</style>
+<script>
+/* Imagens: 1) arquivo local em img/  2) foto do Unsplash  3) foto por palavra-chave (Flickr)  4) cartão CamaFlow */
+var IMG_RESERVA = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=80`;
+var SEM_FOTO = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' fill='%23e8ff3a' font-size='64' font-family='sans-serif' text-anchor='middle'%3ECamaFlow%3C/text%3E%3C/svg%3E";
+function fb(el, id){
+  const passo = +(el.dataset.step || 0); el.dataset.step = passo + 1;
+  const palavra = (el.dataset.q || "hiphop").split(" ")[0];
+  const cadeia = [id ? IMG_RESERVA(id) : null, "https://loremflickr.com/900/600/" + encodeURIComponent(palavra), SEM_FOTO].filter(Boolean);
+  if (passo >= cadeia.length) { el.onerror = null; return; }
+  el.onerror = () => fb(el, id);
+  el.src = cadeia[passo];
+}
+</script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="90">
+
+<div class="top-bar text-center">
+  Vaquinha oficial do CamaFlow no Catarse: fortaleça o hip hop, o slam e as batalhas de Camaçari-BA.
+  <a href="https://www.catarse.com.br/camaflowba?ref=ctrse_project_share&utm_campaign=ctrse_project_prelaunch&utm_medium=copy_link&utm_source=creator" target="_blank" rel="noopener noreferrer">Apoiar agora</a>
+</div>
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-cf py-3">
+  <div class="container">
+    <a class="logo" href="#inicio">Cama<span>Flow</span></a>
+    <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><i class="bi bi-list fs-2 text-white"></i></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
+        <li class="nav-item"><a class="nav-link" href="#picos">Picos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#artistas">Artistas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#oficinas">Oficinas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#apoie">Apoie</a></li>
+      </ul>
+      <button type="button" class="btn btn-line btn-sm position-relative" id="btnFavoritos">
+        <i class="bi bi-heart-fill me-1"></i> Salvos
+        <span id="contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark d-none">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="inicio" class="hero">
+  <div class="container">
+    <div class="row g-4 align-items-end">
+      <div class="col-lg-7">
+        <img class="hero-photo hero-main" data-q="rap battle crowd night" src="img/hero-batalha.jpg" alt="Batalha de rima em Camaçari" onerror="fb(this,'photo-1514525253161-7a46d19cd819')">
+      </div>
+      <div class="col-lg-5 position-relative">
+        <svg class="badge-spin" viewBox="0 0 150 150" aria-hidden="true">
+          <defs><path id="circ" d="M75,75 m-55,0 a55,55 0 1,1 110,0 a55,55 0 1,1 -110,0"/></defs>
+          <text><textPath href="#circ">Não fique de fora • Rima na rua •</textPath></text>
+        </svg>
+        <img class="hero-photo hero-small ms-auto" style="max-width:340px" data-q="hip hop dancer street" src="img/hero-danca.jpg" alt="Dança de rua" onerror="fb(this,'photo-1516450360452-9312f5e86fc7')">
+      </div>
+    </div>
+    <h1 class="mt-5">A rima, a batida e a poesia <span class="hl">de Camaçari</span></h1>
+    <p class="lead text-secondary col-lg-7 px-0">O CamaFlow reúne MCs, poetas do slam, DJs, grafiteiros e b-boys da cidade. Veja onde a cultura acontece, salve os eventos e participe das oficinas gratuitas.</p>
+    <div class="d-flex flex-wrap gap-3">
+      <a href="#agenda" class="btn btn-lime">Ver agenda</a>
+      <a href="#apoie" class="btn btn-line">Apoiar a vaquinha</a>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- HISTÓRIA -->
+<section id="historia">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h2 class="sec-title">Uma cena <span class="hl">feita na rua</span></h2>
+        <p class="text-secondary">O hip hop de Camaçari cresceu em praças, escolas e quadras. Cada geração abriu espaço para a seguinte.</p>
+        <img class="w-100 mt-3" style="height:260px;object-fit:cover" data-q="graffiti wall brazil" src="img/grafite.jpg" alt="Grafite em Camaçari" onerror="fb(this,'photo-1470229722913-7c0e2dbbafd3')">
+      </div>
+      <div class="col-lg-7">
+        <!-- Edite estes marcos com a história real da cena -->
+        <div class="tl"><h4>Primeiras rodas de rima</h4><p class="text-secondary mb-0">Jovens se encontram nas praças para improvisar e trocar ideia.</p></div>
+        <div class="tl"><h4>Chegada do slam</h4><p class="text-secondary mb-0">A poesia falada ganha palco e vira ferramenta de voz da periferia.</p></div>
+        <div class="tl"><h4>Batalhas organizadas</h4><p class="text-secondary mb-0">Coletivos criam batalhas regulares e formam novos MCs.</p></div>
+        <div class="tl"><h4>CamaFlow</h4><p class="text-secondary mb-0">A cena ganha uma vitrine única, com agenda, picos e vaquinha.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PICOS -->
+<section id="picos" style="background:var(--cf-ink)">
+  <div class="container">
+    <h2 class="sec-title">Os <span class="hl">picos</span> da cidade</h2>
+    <div class="row g-4" id="listaPicos"></div>
+  </div>
+</section>
+
+<!-- ARTISTAS -->
+<section id="artistas">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <h2 class="sec-title">Quem faz <span class="hl">acontecer</span></h2>
+        <p class="text-secondary">MCs, poetas, DJs e grafiteiros que movimentam a cidade. Substitua pelos nomes reais.</p>
+        <div id="listaArtistas"></div>
+      </div>
+      <div class="col-lg-6">
+        <img class="w-100" style="height:380px;object-fit:cover" data-q="rapper microphone stage" src="img/artistas.jpg" alt="MC no palco" onerror="fb(this,'photo-1493225457124-a3eb161ffa5f')">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda" style="background:var(--cf-ink)">
+  <div class="container">
+    <h2 class="sec-title">Agenda <span class="hl">da cena</span></h2>
+    <div class="d-flex flex-wrap gap-2 mb-4" id="filtros">
+      <button class="filter-btn active" data-filtro="todos">Todos</button>
+      <button class="filter-btn" data-filtro="Batalha">Batalhas</button>
+      <button class="filter-btn" data-filtro="Slam">Slam</button>
+      <button class="filter-btn" data-filtro="Show">Shows</button>
+    </div>
+    <div class="row g-4" id="listaEventos"></div>
+  </div>
+</section>
+
+<!-- OFICINAS -->
+<section id="oficinas">
+  <div class="container">
+    <h2 class="sec-title">Oficinas <span class="hl">gratuitas</span></h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="cf-card"><img data-q="dj turntables" src="img/oficina-dj.jpg" alt="Oficina de DJ" onerror="fb(this,'photo-1459749411175-04bf5292ceea')"><div class="body"><h4 class="mb-2">DJ e produção</h4><p class="text-secondary mb-0">Primeiros passos nos toca-discos e na produção de beats.</p></div></div></div>
+      <div class="col-md-4"><div class="cf-card"><img data-q="poetry slam microphone" src="img/oficina-slam.jpg" alt="Oficina de slam" onerror="fb(this,'photo-1516450360452-9312f5e86fc7')"><div class="body"><h4 class="mb-2">Escrita e slam</h4><p class="text-secondary mb-0">Como escrever e performar poesia falada.</p></div></div></div>
+      <div class="col-md-4"><div class="cf-card"><img data-q="breakdance street" src="img/oficina-breaking.jpg" alt="Oficina de breaking" onerror="fb(this,'photo-1470229722913-7c0e2dbbafd3')"><div class="body"><h4 class="mb-2">Breaking</h4><p class="text-secondary mb-0">Passos básicos, ritmo e cultura da dança de rua.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APOIE -->
+<section id="apoie" class="pt-0">
+  <div class="container">
+    <div class="support text-center">
+      <h2 class="mb-3">Ajude a cena a continuar</h2>
+      <p class="mb-4 mx-auto" style="max-width:560px">A vaquinha no Catarse financia eventos, oficinas e estrutura para os artistas de Camaçari.</p>
+      <a class="btn btn-dark-cf" target="_blank" rel="noopener noreferrer" href="https://www.catarse.com.br/camaflowba?ref=ctrse_project_share&utm_campaign=ctrse_project_prelaunch&utm_medium=copy_link&utm_source=creator">Apoiar no Catarse</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span class="logo fs-5">Cama<span>Flow</span></span>
+    <small>Cultura urbana de Camaçari - BA</small>
+  </div>
+</footer>
+
+<!-- Janelinha de informações (artistas, picos, eventos, oficinas) -->
+<div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="infoTitulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <img id="infoImg" alt="" style="width:100%;height:220px;object-fit:cover">
+      <div class="modal-body p-4">
+        <span class="tag mb-2" id="infoTag"></span>
+        <h3 class="mt-2 mb-2" id="infoTitulo"></h3>
+        <p class="text-secondary mb-2" id="infoTexto"></p>
+        <p class="small mb-3" id="infoExtra"></p>
+        <button type="button" class="btn btn-lime btn-sm" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de favoritos -->
+<div class="modal fade" id="modalFav" tabindex="-1" aria-labelledby="tituloFav" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-secondary"><h4 class="modal-title fs-5" id="tituloFav">Eventos salvos</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+      <div class="modal-body" id="corpoFav"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+"use strict";
+function seguro(nome, f){ try{ f(); }catch(e){ console.error("CamaFlow ("+nome+"):", e); } }
+/* ===== CONFIGURAÇÃO ===== */
+// >>> CHAVE DE API (é aqui!) <<<
+// Chave de exemplo para cumprir o requisito do projeto. Ela NÃO é uma chave real do Unsplash:
+// com ela o site tenta a API, não consegue e usa as imagens de reserva (o site continua com fotos).
+// Para a API funcionar de verdade, crie uma conta grátis em https://unsplash.com/developers e troque o valor abaixo.
+// Atenção: chave no front-end fica visível a quem abrir o código.
+const API_KEY = "DEMO-camaflow-0000-chave-de-exemplo";
+
+/* ===== DADOS (troque pelos reais) ===== */
+const PICOS = [
+  {nome:"Praça Abrantes", desc:"Ponto de encontro das rodas de rima.", q:"city square brazil", img:"img/praca-abrantes.jpg", fb:"photo-1514525253161-7a46d19cd819"},
+  {nome:"Orla de Arembepe", desc:"Eventos ao ar livre e shows.", q:"beach brazil sunset", img:"img/arembepe.jpg", fb:""},
+  {nome:"Centro Cultural", desc:"Oficinas e slam em espaço fechado.", q:"cultural center stage", img:"img/centro-cultural.jpg", fb:"photo-1493225457124-a3eb161ffa5f"},
+  {nome:"Quadra da Gleba", desc:"Batalhas e campeonatos de breaking.", q:"basketball court street", img:"img/quadra.jpg", fb:""},
+  {nome:"Escola Aberta", desc:"Projetos com jovens e coletivos.", q:"students school art", img:"img/escola.jpg", fb:""},
+  {nome:"Muro do Grafite", desc:"Painéis dos grafiteiros locais.", q:"graffiti mural", img:"img/muro.jpg", fb:""}
+];
+// Nomes e resumos de exemplo: troque pelos dados reais dos artistas.
+const ARTISTAS = [
+  {nome:"MC Exemplo 1", tipo:"MC", bio:"MC de batalhas de rima, conhecido pelo improviso rápido e pelas rimas sobre a vida na cidade.", q:"rapper microphone", fb:"photo-1493225457124-a3eb161ffa5f"},
+  {nome:"MC Exemplo 2", tipo:"MC", bio:"Começou nas rodas da praça e hoje participa de batalhas e shows pela região.", q:"rapper stage", fb:"photo-1514525253161-7a46d19cd819"},
+  {nome:"Poeta do Slam 1", tipo:"Slam", bio:"Poeta e slammer. Escreve sobre identidade, território e resistência.", q:"poetry microphone", fb:"photo-1516450360452-9312f5e86fc7"},
+  {nome:"Poeta do Slam 2", tipo:"Slam", bio:"Representa Camaçari em encontros de poesia falada e conduz oficinas de escrita.", q:"poetry reading", fb:""},
+  {nome:"DJ Exemplo", tipo:"DJ", bio:"DJ que toca boom bap e trap nas batalhas e festas da cena local.", q:"dj turntables", fb:"photo-1459749411175-04bf5292ceea"},
+  {nome:"Grafiteiro Exemplo", tipo:"Grafite", bio:"Artista visual que pinta painéis e murais pelos bairros da cidade.", q:"graffiti artist", fb:""},
+  {nome:"B-boy Exemplo", tipo:"Breaking", bio:"Dançarino de breaking, treina e ensina passos básicos para a garotada.", q:"breakdance", fb:""},
+  {nome:"B-girl Exemplo", tipo:"Breaking", bio:"B-girl atuante em rodas e campeonatos, incentiva a presença feminina na dança de rua.", q:"dancer street", fb:""}
+];
+const OFICINAS = [
+  {nome:"DJ e produção", tipo:"Oficina", desc:"Primeiros passos nos toca-discos e na produção de beats. Para participar, procure a organização do CamaFlow (texto de exemplo).", q:"dj turntables", fb:"photo-1459749411175-04bf5292ceea"},
+  {nome:"Escrita e slam", tipo:"Oficina", desc:"Como escrever e performar poesia falada. Vagas gratuitas (texto de exemplo).", q:"poetry slam", fb:"photo-1516450360452-9312f5e86fc7"},
+  {nome:"Breaking", tipo:"Oficina", desc:"Passos básicos, ritmo e cultura da dança de rua. Aberta a iniciantes (texto de exemplo).", q:"breakdance street", fb:""}
+];
+const EVENTOS = [
+  {id:1,tipo:"Batalha",nome:"Batalha da Praça",data:"Sábado, 19h",local:"Praça Abrantes",q:"rap battle",fb:"photo-1514525253161-7a46d19cd819"},
+  {id:2,tipo:"Slam",nome:"Slam Camaçari",data:"Domingo, 17h",local:"Centro Cultural",q:"poetry slam",fb:"photo-1516450360452-9312f5e86fc7"},
+  {id:3,tipo:"Show",nome:"Noite do Hip Hop",data:"Sexta, 20h",local:"Orla de Arembepe",q:"hip hop concert",fb:"photo-1493225457124-a3eb161ffa5f"},
+  {id:4,tipo:"Batalha",nome:"Batalha de Conhecimento",data:"Quarta, 18h",local:"Escola Aberta",q:"rap battle crowd",fb:"photo-1470229722913-7c0e2dbbafd3"}
+];
+
+const $ = s => document.querySelector(s);
+
+/* Janelinha de informações */
+function abrirInfo(d, tipo){
+  const img = $("#infoImg"); img.dataset.step = 0; img.dataset.q = d.q || "hiphop"; img.alt = d.nome; fb(img, d.fb);
+  $("#infoTag").textContent = tipo;
+  $("#infoTitulo").textContent = d.nome;
+  $("#infoTexto").textContent = d.bio || d.desc || `${d.tipo} em ${d.local}. Horário: ${d.data}. (Texto de exemplo: troque pela descrição real.)`;
+  $("#infoExtra").textContent = d.local ? `${d.data} • ${d.local}` : "";
+  if(window.bootstrap){ bootstrap.Modal.getOrCreateInstance($("#modalInfo")).show(); } else { alert(d.nome + "\n\n" + $("#infoTexto").textContent); }
+}
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("[data-info]"); if(!b) return;
+  const [t, i] = b.dataset.info.split(":");
+  const d = {artista:ARTISTAS, pico:PICOS, evento:EVENTOS, oficina:OFICINAS}[t][i];
+  abrirInfo(d, d.tipo || "Pico");
+});
+
+/* Favoritos (salvos no navegador) */
+let favoritos = [];
+try { favoritos = JSON.parse(localStorage.getItem("cf_favs") || "[]"); } catch(e){}
+function salvarFavs(){ try{ localStorage.setItem("cf_favs", JSON.stringify(favoritos)); }catch(e){} }
+
+/* Faixa rolante */
+seguro("faixa", () => { $("#ticker").innerHTML = Array(12).fill(`<span><b class="tk-logo">Cama<em>Flow</em></b> O festival de hip hop feito para você</span>`).join(""); });
+
+/* Picos */
+seguro("picos", () => { $("#listaPicos").innerHTML = PICOS.map((p,i) => `
+  <div class="col-md-6 col-lg-4"><div class="cf-card">
+    <img data-q="${p.q}" src="${p.img}" alt="${p.nome}" onerror="fb(this,'${p.fb}')">
+    <div class="body"><h4 class="mb-2">${p.nome}</h4><p class="text-secondary mb-0">${p.desc}</p><button class="btn btn-lime btn-sm mt-3" data-info="pico:${i}">Saiba mais</button></div>
+  </div></div>`).join(""); });
+
+/* Artistas */
+seguro("artistas", () => { $("#listaArtistas").innerHTML = ARTISTAS.map((a,i) => `<button type="button" class="chip" data-info="artista:${i}">${a.nome}</button>`).join(""); });
+
+/* Eventos + filtros */
+function desenharEventos(filtro="todos"){
+  const lista = EVENTOS.filter(e => filtro==="todos" || e.tipo===filtro);
+  $("#listaEventos").innerHTML = lista.map(e => `
+    <div class="col-md-6 col-lg-3"><div class="cf-card">
+      <img data-q="${e.q}" src="img/evento-${e.id}.jpg" alt="${e.nome}" onerror="fb(this,'${e.fb}')">
+      <button class="fav ${favoritos.includes(e.id)?'saved':''}" data-id="${e.id}" aria-label="Salvar ${e.nome}"><i class="bi bi-heart-fill"></i></button>
+      <div class="body"><span class="tag mb-2">${e.tipo}</span><h4 class="fs-5 mt-2">${e.nome}</h4>
+      <p class="text-secondary small mb-0">${e.data}<br>${e.local}</p><button class="btn btn-lime btn-sm mt-3" data-info="evento:${EVENTOS.indexOf(e)}">Detalhes</button></div>
+    </div></div>`).join("");
+  carregarFotos("#listaEventos");
+}
+$("#filtros").addEventListener("click", ev => {
+  const b = ev.target.closest(".filter-btn"); if(!b) return;
+  document.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+  b.classList.add("active"); desenharEventos(b.dataset.filtro);
+});
+$("#listaEventos").addEventListener("click", ev => {
+  const b = ev.target.closest(".fav"); if(!b) return;
+  const id = Number(b.dataset.id);
+  favoritos = favoritos.includes(id) ? favoritos.filter(x => x!==id) : [...favoritos, id];
+  b.classList.toggle("saved"); salvarFavs(); atualizarContador();
+});
+
+/* Contador e modal de salvos */
+function atualizarContador(){
+  const c = $("#contador"); c.textContent = favoritos.length;
+  c.classList.toggle("d-none", favoritos.length===0);
+}
+$("#btnFavoritos").addEventListener("click", () => {
+  const itens = EVENTOS.filter(e => favoritos.includes(e.id));
+  $("#corpoFav").innerHTML = itens.length
+    ? itens.map(e => `<div class="border-bottom border-secondary py-2"><strong>${e.nome}</strong><br><small class="text-secondary">${e.data} • ${e.local}</small></div>`).join("")
+    : `<p class="text-secondary mb-0">Você ainda não salvou nenhum evento. Toque no coração em um card da agenda.</p>`;
+  if(window.bootstrap){ bootstrap.Modal.getOrCreateInstance($("#modalFav")).show(); } else { alert("Salvos: " + itens.map(e => e.nome).join(", ")); }
+});
+
+/* Fotos pela API do Unsplash (opcional): troca cada imagem com data-q */
+async function carregarFotos(escopo=document){
+  if(!API_KEY) return;
+  const raiz = typeof escopo==="string" ? $(escopo) : escopo;
+  for(const img of raiz.querySelectorAll("img[data-q]")){
+    try{
+      const r = await fetch(`https://api.unsplash.com/search/photos?per_page=1&orientation=landscape&query=${encodeURIComponent(img.dataset.q)}`,
+        {headers:{Authorization:`Client-ID ${API_KEY}`}});
+      if(!r.ok) throw new Error(r.status);
+      const d = await r.json();
+      if(d.results[0]) img.src = d.results[0].urls.regular;
+    }catch(e){ console.warn("Unsplash:", e.message); break; }
+  }
+}
+
+seguro("oficinas", () => document.querySelectorAll("#oficinas .cf-card .body").forEach((b,i) => {
+  b.insertAdjacentHTML("beforeend", `<button class="btn btn-lime btn-sm mt-3" data-info="oficina:${i}">Quero participar</button>`);
+}));
+seguro("agenda", desenharEventos); seguro("contador", atualizarContador); seguro("fotos", carregarFotos);
+})();
+</script>
+</body>
+</html>
